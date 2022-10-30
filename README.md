@@ -1,6 +1,14 @@
-# monble
+# MonBlé
 
-A new Flutter project.
+Mobile App for personal money management
+
+## Screenshorts
+
+<p>
+<img src="https://user-images.githubusercontent.com/6081388/198905977-b1bd2357-512d-47b6-b03a-8932648970b5.png" width="250"/>
+<img src="https://user-images.githubusercontent.com/6081388/198906023-ca88d138-3466-431e-9dc9-c066277a520f.png" width="250"/>
+</p>
+
 
 ## Getting Started
 
