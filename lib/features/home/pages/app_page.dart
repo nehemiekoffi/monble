@@ -24,6 +24,14 @@ class _AppPageState extends State<AppPage> {
     return Scaffold(
       extendBody: true,
       bottomNavigationBar: DotNavigationBar(
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.shade200,
+            spreadRadius: 5,
+            blurRadius: 15,
+            offset: const Offset(1, 1),
+          )
+        ],
         selectedItemColor: AppColors.primary,
         onTap: (index) {
           setState(() {

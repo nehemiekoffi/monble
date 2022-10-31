@@ -103,13 +103,6 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Column(
                           children: [
-                            Text(
-                              "Transactions récentes ",
-                              style: AppTextStyles.titleMdBold.copyWith(
-                                color: AppColors.grey,
-                              ),
-                            ),
-                            SizedBox(height: 16),
                             ListView.separated(
                               padding: EdgeInsets.symmetric(
                                 horizontal: 16,
