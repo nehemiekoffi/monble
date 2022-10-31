@@ -14,6 +14,7 @@ class HomeCircleButton extends StatelessWidget {
       height: 80,
       child: FloatingActionButton(
         onPressed: onPressed,
+        elevation: 2,
         backgroundColor: Colors.white,
         foregroundColor: Colors.red,
         child: icon,
