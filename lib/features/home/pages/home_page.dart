@@ -16,12 +16,65 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(50),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black12,
+                blurRadius: 10,
+                spreadRadius: 5,
+                offset: Offset(1, 1),
+              ),
+            ]),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            InkWell(
+              onTap: () {},
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.add_circle_outline_sharp,
+                    size: 35,
+                    color: Colors.green.shade300,
+                  ),
+                  Text("Dépense"),
+                ],
+              ),
+            ),
+            const SizedBox(width: 64),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  Icons.remove_circle_outline,
+                  size: 35,
+                  color: Colors.red.shade400,
+                ),
+                Text("Dépense"),
+              ],
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         elevation: 0,
         title: Image.asset(
           'assets/images/app-logo.png',
           width: 100,
         ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.bar_chart),
+          )
+        ],
       ),
       body: Stack(
         alignment: AlignmentDirectional.bottomStart,
@@ -62,7 +115,6 @@ class _HomePageState extends State<HomePage> {
             child: Stack(
               children: [
                 Container(
-                  padding: const EdgeInsets.only(top: 32),
                   child: ClipPath(
                     clipper: OvalTopBorderClipper(),
                     child: Container(
@@ -76,48 +128,25 @@ class _HomePageState extends State<HomePage> {
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            HomeCircleButton(
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.add_circle_outline,
-                                size: 30,
-                                color: Colors.green,
-                              ),
-                            ),
-                            const SizedBox(width: 64),
-                            HomeCircleButton(
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.remove_circle_outline,
-                                size: 30,
-                              ),
-                            ),
-                          ],
-                        ),
                         const SizedBox(
-                          height: 32,
+                          height: 70,
                         ),
                         Column(
                           children: [
                             ListView.separated(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 16,
-                              ),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 16),
                               shrinkWrap: true,
                               itemBuilder: (_, index) {
-                                return TransactionItem();
+                                return const TransactionItem();
                               },
                               separatorBuilder: (_, index) {
-                                return Divider(
+                                return const Divider(
                                   height: 8,
                                   color: Colors.transparent,
                                 );
                               },
-                              itemCount: 5,
+                              itemCount: 6,
                             )
                           ],
                         ),

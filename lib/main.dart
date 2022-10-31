@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:monble/core/constants/app_colors.dart';
-import 'package:monble/features/home/pages/app_page.dart';
+import 'package:monble/features/home/pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: AppColors.bodyBackgroundColor,
         fontFamily: 'Inter',
       ),
-      home: const AppPage(),
+      home: const HomePage(),
     );
   }
 }
