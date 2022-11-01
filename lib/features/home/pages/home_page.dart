@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:monble/core/constants/app_colors.dart';
 import 'package:monble/core/constants/app_text_styles.dart';
-import 'package:monble/features/home/widgets/home_circle_button.dart';
+import 'package:monble/core/utils/navigate.dart';
+import 'package:monble/features/transaction/pages/transaction_stats_page.dart';
 import 'package:monble/features/transaction/widgets/transaction_item.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(50),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 color: Colors.black12,
                 blurRadius: 10,
@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
                     size: 35,
                     color: Colors.green.shade300,
                   ),
-                  Text("Dépense"),
+                  const Text("Dépense"),
                 ],
               ),
             ),
@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                   size: 35,
                   color: Colors.red.shade400,
                 ),
-                Text("Dépense"),
+                const Text("Dépense"),
               ],
             ),
           ],
@@ -71,7 +71,9 @@ class _HomePageState extends State<HomePage> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigate.to(const TransactionStatsPage(), context);
+            },
             icon: const Icon(Icons.bar_chart),
           )
         ],
@@ -115,13 +117,8 @@ class _HomePageState extends State<HomePage> {
             child: Stack(
               children: [
                 Container(
-                  child: ClipPath(
-                    clipper: OvalTopBorderClipper(),
-                    child: Container(
-                      height: double.infinity,
-                      color: AppColors.bodyBackgroundColor,
-                    ),
-                  ),
+                  height: double.infinity,
+                  color: AppColors.bodyBackgroundColor,
                 ),
                 Container(
                   color: Colors.transparent,
@@ -129,7 +126,7 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       children: [
                         const SizedBox(
-                          height: 70,
+                          height: 32,
                         ),
                         Column(
                           children: [
