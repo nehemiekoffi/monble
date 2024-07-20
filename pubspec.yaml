@@ -1,5 +1,5 @@
 name: monble
-description: A new Flutter project.
+description: A (local only) money management app for everyone. No backend, no internet connection required.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -20,7 +20,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.18.1 <3.0.0'
+  sdk: '>=3.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -33,6 +33,8 @@ dependencies:
     sdk: flutter
   dot_navigation_bar: ^1.0.1+4
   flutter_custom_clippers: ^2.0.0
+  riverpod: ^2.5.1
+  isar: ^3.1.0+1
 
 
   # The following adds the Cupertino Icons font to your application.
