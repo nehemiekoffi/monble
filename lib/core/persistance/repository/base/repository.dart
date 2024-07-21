@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:isar/isar.dart';
-import 'package:monble/core/persistance/repositories/base/repository_mixins.dart';
+import 'package:monble/core/persistance/repository/base/repository_mixins.dart';
 import 'package:monble/core/persistance/schema/base/model.dart';
 
 /// A base class for all repositories.

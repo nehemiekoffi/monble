@@ -1,5 +1,5 @@
 import 'package:isar/isar.dart';
-import 'package:monble/core/persistance/repositories/base/repository.dart';
+import 'package:monble/core/persistance/repository/base/repository.dart';
 import 'package:monble/core/persistance/schema/base/model.dart';
 
 /// A mixin that provides write operations for a repository.
