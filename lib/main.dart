@@ -1,27 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:monble/core/constants/app_colors.dart';
-import 'package:monble/features/home/pages/home_page.dart';
+import 'package:monble/app.dart';
+import 'package:monble/injection_container.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+/// The entry point of the app
+/// Here we setup all the app need before running it :
+/// - Setup injection container
+/// - Initialize some plugins or services
+void main() async {
+  // Setup injection container
+  InjectionContainer.setup();
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-          backgroundColor: AppColors.primary,
-          centerTitle: true,
-        ),
-        scaffoldBackgroundColor: AppColors.bodyBackgroundColor,
-        fontFamily: 'Inter',
-      ),
-      home: const HomePage(),
-    );
-  }
+  // Run the app
+  runApp(const MonBleApp());
 }
