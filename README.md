@@ -16,7 +16,7 @@ Main features of the app are :
 
 - Use the app in offline mode ✅
 - Autenticate with passcode ⏳
-- Authenticate with fingerprint or faceID
+- Authenticate with fingerprint or faceID ⏳
 - Track incomes ⏳
 - Track expenses ⏳
 - Create budgets ⏳
