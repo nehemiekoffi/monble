@@ -1,27 +1,32 @@
 import 'package:isar/isar.dart';
-import 'package:monble/core/persistance/repositories/base/basic_repository.dart';
+import 'package:monble/core/persistance/repositories/base/repository.dart';
 import 'package:monble/core/persistance/schema/base/model.dart';
 
-mixin CreateMixin<T extends Model> on BasicRepository {
-  T insert(T model) {
-    return isar.writeTxnSync<T>(() {
+/// A mixin that provides write operations for a repository.
+/// Write operations include saving a single model and saving multiple models.
+/// Saving means creating or updating a model in the database.
+mixin WriteMixin<T extends Model> on SimpleRepository {
+  T save(T model) {
+    return isar.writeTxnSync(() {
       final id = isarCollection.putSync(model);
       return isarCollection.getSync(id)! as T;
     });
   }
 
-  ({bool result, int insertedCount}) insertMany(List<T> models) {
+  ({bool result, int savedCount}) saveMany(List<T> models) {
     return isar.writeTxnSync(() {
       final ids = isarCollection.putAllSync(models);
       return (
         result: ids.length == models.length,
-        insertedCount: ids.length,
+        savedCount: ids.length,
       );
     });
   }
 }
 
-mixin ReadMixin<T extends Model> on BasicRepository {
+/// A mixin that provides read operations for a repository.
+/// Read operations include finding a single model and finding multiple models.
+mixin ReadMixin<T extends Model> on SimpleRepository {
   T? find(Id id) {
     return isarCollection.getSync(id) as T?;
   }
@@ -31,26 +36,10 @@ mixin ReadMixin<T extends Model> on BasicRepository {
   }
 }
 
-mixin UpdateMixin<T extends Model> on BasicRepository {
-  T update(T model) {
-    return isar.writeTxnSync<T>(() {
-      final id = isarCollection.putSync(model);
-      return isarCollection.getSync(id)! as T;
-    });
-  }
-
-  ({bool result, int updatedCount}) updateMany(List<T> models) {
-    return isar.writeTxnSync(() {
-      final ids = isarCollection.putAllSync(models);
-      return (
-        result: ids.length == models.length,
-        updatedCount: ids.length,
-      );
-    });
-  }
-}
-
-mixin DeleteMixin<T extends Model> on BasicRepository {
+/// A mixin that provides delete operations for a repository.
+/// Delete operations include deleting a single model and deleting multiple models.
+/// To be fair, delete operations are kind of write operations, but we are separating them for clarity.
+mixin DeleteMixin<T extends Model> on SimpleRepository {
   bool delete(Id id) {
     return isarCollection.deleteSync(id);
   }
