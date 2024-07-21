@@ -1,6 +1,6 @@
 # MonBlé
 
-Mobile App for personal money management
+Mobile App for personal finance management built with Flutter
 
 ## Screenshorts
 
@@ -10,15 +10,18 @@ Mobile App for personal money management
 </p>
 
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+Main feature on the project are :
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Use the app in offline mode
+- Track incomes
+- Track expenses
+- Create a budgets
+- See a daily / monthly / yearly report of your finance
 
+## Code guidelines
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
