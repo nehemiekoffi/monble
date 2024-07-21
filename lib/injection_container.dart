@@ -7,6 +7,6 @@ class InjectionContainer {
   const InjectionContainer._();
 
   static void setup() {
-    GetIt.instance.registerLazySingletonAsync(StorageService.init);
+    GetIt.instance.registerSingletonAsync(StorageService.init);
   }
 }

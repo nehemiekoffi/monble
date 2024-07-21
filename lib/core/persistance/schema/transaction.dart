@@ -4,6 +4,8 @@ import 'package:monble/core/persistance/schema/project.dart';
 import 'package:monble/core/persistance/schema/transaction_category.dart';
 import 'package:monble/core/persistance/schema/transaction_type.dart';
 
+part 'transaction.g.dart';
+
 @collection
 class Transaction extends Model {
   final String label;
@@ -12,7 +14,7 @@ class Transaction extends Model {
 
   final DateTime date;
 
-  final num amount;
+  final double amount;
 
   @Enumerated(EnumType.name)
   final TransactionType type;
@@ -22,15 +24,14 @@ class Transaction extends Model {
   final IsarLink<Project> project;
 
   Transaction({
+    required this.date,
     this.label = "",
     this.description = "",
-    DateTime? date,
     this.amount = 0,
     this.type = TransactionType.expense,
     TransactionCategory? category,
     Project? project,
-  })  : date = date ?? DateTime.now(),
-        category = IsarLink()..value = category,
+  })  : category = IsarLink()..value = category,
         project = IsarLink()..value = project,
         super();
 }
