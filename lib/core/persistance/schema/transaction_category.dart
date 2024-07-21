@@ -1,6 +1,8 @@
 import 'package:isar/isar.dart';
 import 'package:monble/core/persistance/schema/base/model.dart';
 
+part 'transaction_category.g.dart';
+
 @collection
 class TransactionCategory extends Model {
   final String icon;
@@ -9,7 +11,7 @@ class TransactionCategory extends Model {
 
   final String description;
 
-  final num budget;
+  final double budget;
 
   TransactionCategory({
     this.label = "",

@@ -22,9 +22,6 @@ version: 1.0.0+1
 environment:
   sdk: '>=3.0.0'
 
-dependency_overrides:
-  analyzer: ^6.4.1
-
 dependencies:
   flutter:
     sdk: flutter
@@ -50,9 +47,9 @@ dev_dependencies:
   isar_generator: ^3.1.0+1
 
   # riverpod dependencies
-  riverpod_generator: ^2.4.2
-  custom_lint: ^0.6.4
-  riverpod_lint: ^2.3.12
+  riverpod_generator: ^2.3.3
+  custom_lint: ^0.5.11
+  riverpod_lint: ^2.1.1
 
   # other dev dependencies
   flutter_lints: ^4.0.0

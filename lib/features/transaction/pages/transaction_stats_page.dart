@@ -23,12 +23,10 @@ class _TransactionStatsPageState extends State<TransactionStatsPage> {
                   icon: const Icon(Icons.arrow_back),
                   onPressed: () {},
                 ),
-                Expanded(
-                  child: Container(
-                    child: Text(
-                      "Janvier",
-                      textAlign: TextAlign.center,
-                    ),
+                const Expanded(
+                  child: Text(
+                    "Janvier",
+                    textAlign: TextAlign.center,
                   ),
                 ),
                 IconButton(

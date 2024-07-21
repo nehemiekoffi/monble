@@ -30,20 +30,20 @@ class SimpleRepository<T extends Model> {
 
 /// A repository that provides standard CRUD operations for a model.
 class CrudRepository<T extends Model> extends SimpleRepository with WriteMixin<T>, ReadMixin<T>, DeleteMixin<T> {
-  CrudRepository(Isar isar) : super(isar);
+  CrudRepository(super.isar);
 }
 
 /// A repository that provides only write operations for a model.
 class WriteOnlyRepository<T extends Model> extends SimpleRepository with WriteMixin<T> {
-  WriteOnlyRepository(Isar isar) : super(isar);
+  WriteOnlyRepository(super.isar);
 }
 
 /// A repository that provides only read operations for a model.
 class ReadOnlyRepository<T extends Model> extends SimpleRepository with ReadMixin<T> {
-  ReadOnlyRepository(Isar isar) : super(isar);
+  ReadOnlyRepository(super.isar);
 }
 
 /// A repository that provides only delete operations for a model.
 class DeleteOnlyRepository<T extends Model> extends SimpleRepository with DeleteMixin<T> {
-  DeleteOnlyRepository(Isar isar) : super(isar);
+  DeleteOnlyRepository(super.isar);
 }
