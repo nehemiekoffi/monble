@@ -12,16 +12,19 @@ Mobile App for personal finance management built with Flutter
 
 ## Features
 
-Main feature on the project are :
+Main features of the app are :
 
+- Use the app in offline mode ✅
+- Autenticate with passcode ⏳
+- Authenticate with fingerprint or faceID
+- Track incomes ⏳
+- Track expenses ⏳
+- Create budgets ⏳
+- Track budget overruns ⏳
+- See a daily / monthly / yearly report of your finance ⏳
 
-- Use the app in offline mode
-- Track incomes
-- Track expenses
-- Create a budgets
-- See a daily / monthly / yearly report of your finance
+## Contribution
+If you want to contribute, kindly fork this repositry and do make a pull requests.
 
-## Code guidelines
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
+If you are new to flutter, view the [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
