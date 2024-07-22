@@ -8,7 +8,7 @@ import 'package:monble/injection_container.dart';
 /// - Initialize some plugins or services
 void main() async {
   // Setup injection container
-  InjectionContainer.setup();
+  setupInjectionContainer();
 
   // Run the app
   runApp(const MonBleApp());
