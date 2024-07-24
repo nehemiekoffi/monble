@@ -9,15 +9,11 @@ const _schemas = [
   TransactionCategorySchema,
 ];
 
-class StorageService<T> {
-  const StorageService._();
-
-  static Future<Isar> init() async {
-    final directory = await getApplicationDocumentsDirectory();
-    return Isar.open(
-      _schemas,
-      directory: directory.path,
-      inspector: true,
-    );
-  }
+Future<Isar> setupStorage() async {
+  final directory = await getApplicationDocumentsDirectory();
+  return Isar.open(
+    _schemas,
+    directory: directory.path,
+    inspector: true,
+  );
 }
